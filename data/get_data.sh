@@ -1,0 +1,1 @@
+wget http://download.inep.gov.br/microdados/microdados_educacao_superior_2018.zip
