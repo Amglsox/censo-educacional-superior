@@ -36,5 +36,5 @@ jobs:
     
     - name: Deploy
       run: |-
-        gsutil -m rsync -R ./scripts-spark/censo_superior.ipynb gs://spark_streaming_kafka_bq
+        gsutil -m rsync -R ./scripts-spark gs://spark_streaming_kafka_bq
     
