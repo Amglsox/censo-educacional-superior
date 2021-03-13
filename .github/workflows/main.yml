@@ -10,7 +10,7 @@ on:
   pull_request:
     branches: [ master ]
 env:
-  GCS_BUCKET: ${{ secretes.GCS_BUCKET }}
+  GCS_BUCKET: ${{secrets.GCS_BUCKET }}
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -25,13 +25,13 @@ jobs:
     
     - name: Echo
       run: |-
-            echo $GCS_BUCKET
+            echo '$GCS_BUCKET'
 
     - name: Setup - gcloud / gsutil
       uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
       with:
-        service_account_key: ${{ secretes.GCS_SA_KEY }}
-        project_id: ${{ secretes.GCS_PROJECT }}
+        service_account_key: ${{ secrets.GCS_SA_KEY }}
+        project_id: ${{ secrets.GCS_PROJECT }}
         export_default_credentials: True
     
     - name: Deploy
